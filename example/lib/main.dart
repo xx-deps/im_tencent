@@ -13,8 +13,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        floatingActionButton: FloatingActionButton.small(
+        floatingActionButton: FloatingActionButton(
           onPressed: _onPressd,
+          child: const Icon(Icons.add),
         ),
         body: const Center(
           child: Text('Hello World!'),
@@ -23,7 +24,7 @@ class MainApp extends StatelessWidget {
     );
   }
 
-  void _onPressd() {
+  void _onPressd() async {
     final r = Calculator().addOne(10);
     if (kDebugMode) print("✅ $r");
   }
